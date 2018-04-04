@@ -27,7 +27,7 @@ class CashRegister
   end
 
   def void_last_transaction
-    @total -= @cart.last[1] * @cart.last[2] * (1 - @discount)
+    @total -= @cart.last[1] * @cart.last[2] * (1 - @discount/100.0)
     @items.slice!(-@cart.last[2]..-1)
     @cart.pop
   end
